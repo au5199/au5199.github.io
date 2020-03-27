@@ -235,15 +235,17 @@
 numbers.sort(function(a, b) {
   return a - b;
 });
-console.log(numbers);</code></pre><p><strong>但是function(a, b)方法是利用什麼原理來達成數值陣列排序的呢?</strong></p>
+console.log(numbers);
+</code></pre><p><strong>但是function(a, b)方法是利用什麼原理來達成數值陣列排序的呢?</strong></p>
 <p>原因出在Sort這個方法是由Javascript Engine所提供的sort。以瀏覽器Google Chrome (V8)為例，Sort方法是使用InsertionSort跟QuickSort實做出來的。當陣列長度小於等於10，就以InsertionSort來做排序。如果以上述的例子來追蹤一下，不難發現其排序過程就是InsertionSort。有興趣的人可以參考Github上的V8 JavaScript的陣列<a href="https://github.com/v8/v8/blob/master/src/js/array.js" target="_blank" rel="noopener">array.js</a>，另外想要理解什麼是InsertionSort的人，請參考其<a href="https://www.khanacademy.org/computing/computer-science/algorithms/insertion-sort/a/insertion-sort" target="_blank" rel="noopener">作法</a>。</p>
 <pre><code>var numbers = [1, 100, 10, 2, 200, 20];
 numbers.sort(function(a, b) {
   console.log(numbers);
-  console.log(&apos;a=&apos; + a + &apos; b= &apos; + b)
+  console.log(&#39;a=&#39; + a + &#39; b= &#39; + b)
   return a - b;
 });
-console.log(numbers);</code></pre><p>程式碼結果</p>
+console.log(numbers);
+</code></pre><p>程式碼結果</p>
 <p><img src="/images/pasted-0.png" alt="程式碼結果"></p>
 <p>終於解開我心中的疑問。開心~</p>
 
@@ -438,6 +440,8 @@ console.log(numbers);</code></pre><p>程式碼結果</p>
 
 
 
+
+  
 
   
 

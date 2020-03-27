@@ -213,8 +213,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Resourceful-applications-–-representational-state-transfer-REST"><a href="#Resourceful-applications-–-representational-state-transfer-REST" class="headerlink" title="Resourceful applications – representational state transfer (REST)"></a>Resourceful applications – representational state transfer (REST)</h1><p>應用程式使用HTTP協定和一系列定義良好的URL端點來實現下表中定義的七個操作：</p>
-<p><img src="http:%5Cau5199.cc.au.edu.tw%5Cimages%5C20181021-1.jpg" alt=""></p>
+          <h1 id="Resourceful-applications-—-representational-state-transfer-REST"><a href="#Resourceful-applications-—-representational-state-transfer-REST" class="headerlink" title="Resourceful applications — representational state transfer (REST)"></a>Resourceful applications — representational state transfer (REST)</h1><p>應用程式使用HTTP協定和一系列定義良好的URL端點來實現下表中定義的七個操作：</p>
+<p><img src="http:\\au5199.cc.au.edu.tw\images\20181021-1.jpg" alt=""></p>
 
       
     </div>
@@ -298,19 +298,17 @@
 <li>在程式碼檔案中，安裝Monolog套件</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer require monolog&#x2F;monolog</span><br></pre></td></tr></table></figure>
-
-<ol start="3">
+<ol>
 <li>接下來在PHP程式碼中輸入 (Laravel作法也是一樣，可以在routes-&gt;web.php中做測試)</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$languages &#x3D; [</span><br><span class="line">    &#39;languages&#39; &#x3D;&gt; [</span><br><span class="line">        &#39;Perl&#39;,</span><br><span class="line">        &#39;PHP&#39;,</span><br><span class="line">        &#39;Python&#39;,</span><br><span class="line">    ],</span><br><span class="line">];</span><br><span class="line">$a &#x3D; 10;</span><br><span class="line">$a &#x3D; $a + 1;</span><br><span class="line">$logger &#x3D; new \Monolog\Logger(&#39;my_log&#39;);</span><br><span class="line">$handler &#x3D; new \Monolog\Handler\ChromePHPHandler();</span><br><span class="line">$logger-&gt;pushHandler($handler);</span><br><span class="line">$logger-&gt;info($a);</span><br><span class="line">$logger-&gt;info(&#39;Log Array Test: &#39;, $languages);</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
+<ol>
 <li><p>其他Monolog詳細用法可以參考  <a href="https://stackify.com/php-monolog-tutorial/" target="_blank" rel="noopener">PHP Monolog Tutorial: A Step by Step Guide</a></p>
 </li>
 <li><p>最後結果如下</p>
 </li>
 </ol>
-<p><img src="http:%5Cau5199.cc.au.edu.tw%5Cimages%5C20181019-1.jpg" alt=""></p>
+<p><img src="http:\\au5199.cc.au.edu.tw\images\20181019-1.jpg" alt=""></p>
 
       
     </div>
@@ -404,9 +402,9 @@
 </ol>
 </li>
 <li>改變文字內容 :<ol>
-<li>document.getElementById(‘ID名稱’).textContent &lt;– 塞內容進去</li>
-<li>document.getElementById(‘ID名稱’).innerText &lt;– 塞內容進去 (IE 8之前IE專用屬性)</li>
-<li>document.getElementById(‘ID名稱’).innerHTML &lt;– 塞HTML標籤與內容進去</li>
+<li>document.getElementById(‘ID名稱’).textContent &lt;— 塞內容進去</li>
+<li>document.getElementById(‘ID名稱’).innerText &lt;— 塞內容進去 (IE 8之前IE專用屬性)</li>
+<li>document.getElementById(‘ID名稱’).innerHTML &lt;— 塞HTML標籤與內容進去</li>
 </ol>
 </li>
 </ul>
@@ -416,12 +414,11 @@
 </ol>
 </li>
 <li>改變文字內容 :<ol>
-<li>document.getElementsByClassName(‘Class名稱’)[0].textContent &lt;– 塞內容進去</li>
-<li>document.getElementsByClassName(‘ID名稱’)[0].innerText &lt;– 塞內容進去 (IE 8之前IE專用屬性)</li>
-<li>document.getElementsByClassName(‘Class名稱’)[0].innerHTML &lt;– 塞HTML標籤與內容進去</li>
+<li>document.getElementsByClassName(‘Class名稱’)[0].textContent &lt;— 塞內容進去</li>
+<li>document.getElementsByClassName(‘ID名稱’)[0].innerText &lt;— 塞內容進去 (IE 8之前IE專用屬性)</li>
+<li>document.getElementsByClassName(‘Class名稱’)[0].innerHTML &lt;— 塞HTML標籤與內容進去</li>
 <li>要注意getElements的使用方法，因為是elements，所以會回傳一個nodeList，不是回傳一個元素。就算是回傳只有一個元素。存取的方法也要寫成<code>document.getElementsByClassName(&#39;Class名稱&#39;)[0]</code></li>
 <li>轉換nodeList成為array(日後可以方便處理)；<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lis &#x3D; Array.from(document.getElementsByClassName(&#39;li&#39;));</span><br><span class="line">lis.forEach(function(li, index)&#123;</span><br><span class="line">    li.textContent &#x3D; &quot;內容&quot;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
 </li>
 </ol>
 </li>
@@ -434,16 +431,11 @@
 </ul>
 <h2 id="5-NodeType"><a href="#5-NodeType" class="headerlink" title="5. NodeType"></a>5. NodeType</h2><p>Node有很多種型態，如元素節點，屬性節點，文字節點，註解節點等，通過NodeType區分，常見的如下：</p>
 <ul>
-<li><p>1 - Element</p>
-</li>
-<li><p>2 - Attribute (deprecated)</p>
-</li>
-<li><p>3 - Text node</p>
-</li>
-<li><p>8 - Comment</p>
-</li>
-<li><p>9 - Document itself</p>
-</li>
+<li>1 - Element</li>
+<li>2 - Attribute (deprecated)</li>
+<li>3 - Text node</li>
+<li>8 - Comment</li>
+<li>9 - Document itself</li>
 <li><p>10 - Doctype<br>元素節點是節點(Node)中的一種型態，也繼承了節點這個物件</p>
 </li>
 <li><p>document.getElementById(“ID名稱”)取到的是Element也是Node型態。</p>
@@ -451,11 +443,7 @@
 </ul>
 <h2 id="6-取得child-nodes，children-element-nodes，Children-of-children，First-child，Last-child，parent-node，next-sibling與previous-sibling"><a href="#6-取得child-nodes，children-element-nodes，Children-of-children，First-child，Last-child，parent-node，next-sibling與previous-sibling" class="headerlink" title="6. 取得child nodes，children element nodes，Children of children，First child，Last child，parent node，next sibling與previous sibling"></a>6. 取得child nodes，children element nodes，Children of children，First child，Last child，parent node，next sibling與previous sibling</h2><blockquote>
 <p>.children is a property of an Element. Only Elements have children, and these children are all of type Element.<br>However .childNodes is a property of Node. .childNodes can contain any node.</p>
-<p>So a concrete example would be</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var el &#x3D; document.createElement(&quot;div&quot;);</span><br><span class="line">el.textContent &#x3D; &quot;foo&quot;</span><br><span class="line">el.childNodes.length &#x3D;&#x3D;&#x3D; 1; &#x2F;&#x2F; TextNode is a node child</span><br><span class="line">el.children.length &#x3D;&#x3D;&#x3D; 0; &#x2F;&#x2F; no Element children</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>Of course .children is DOM4 so browser support is shaky, however if you use the DOM-shim, your cross browser problems will go away! Most of the time you want to use .children because generally you don’t want to loop over TextNodes or Comments in your DOM manipulation. If you do want to manipulate TextNodes you probably want textContent instead.</p>
+<p>So a concrete example would be<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var el &#x3D; document.createElement(&quot;div&quot;);</span><br><span class="line">el.textContent &#x3D; &quot;foo&quot;</span><br><span class="line">el.childNodes.length &#x3D;&#x3D;&#x3D; 1; &#x2F;&#x2F; TextNode is a node child</span><br><span class="line">el.children.length &#x3D;&#x3D;&#x3D; 0; &#x2F;&#x2F; no Element children</span><br></pre></td></tr></table></figure><br>Of course .children is DOM4 so browser support is shaky, however if you use the DOM-shim, your cross browser problems will go away! Most of the time you want to use .children because generally you don’t want to loop over TextNodes or Comments in your DOM manipulation. If you do want to manipulate TextNodes you probably want textContent instead.</p>
 </blockquote>
 <ul>
 <li>children是Element的屬性，childNodes是Node的屬性</li>
@@ -554,15 +542,17 @@
 numbers.sort(function(a, b) {
   return a - b;
 });
-console.log(numbers);</code></pre><p><strong>但是function(a, b)方法是利用什麼原理來達成數值陣列排序的呢?</strong></p>
+console.log(numbers);
+</code></pre><p><strong>但是function(a, b)方法是利用什麼原理來達成數值陣列排序的呢?</strong></p>
 <p>原因出在Sort這個方法是由Javascript Engine所提供的sort。以瀏覽器Google Chrome (V8)為例，Sort方法是使用InsertionSort跟QuickSort實做出來的。當陣列長度小於等於10，就以InsertionSort來做排序。如果以上述的例子來追蹤一下，不難發現其排序過程就是InsertionSort。有興趣的人可以參考Github上的V8 JavaScript的陣列<a href="https://github.com/v8/v8/blob/master/src/js/array.js" target="_blank" rel="noopener">array.js</a>，另外想要理解什麼是InsertionSort的人，請參考其<a href="https://www.khanacademy.org/computing/computer-science/algorithms/insertion-sort/a/insertion-sort" target="_blank" rel="noopener">作法</a>。</p>
 <pre><code>var numbers = [1, 100, 10, 2, 200, 20];
 numbers.sort(function(a, b) {
   console.log(numbers);
-  console.log(&apos;a=&apos; + a + &apos; b= &apos; + b)
+  console.log(&#39;a=&#39; + a + &#39; b= &#39; + b)
   return a - b;
 });
-console.log(numbers);</code></pre><p>程式碼結果</p>
+console.log(numbers);
+</code></pre><p>程式碼結果</p>
 <p><img src="/images/pasted-0.png" alt="程式碼結果"></p>
 <p>終於解開我心中的疑問。開心~</p>
 
@@ -740,6 +730,61 @@ console.log(numbers);</code></pre><p>程式碼結果</p>
 
 
   
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
