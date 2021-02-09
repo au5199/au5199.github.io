@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 5.3.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_TW">
 <meta property="og:image" content="https://au5199.github.io/images/pasted-0.png">
 <meta property="article:published_time" content="2018-05-20T14:04:00.000Z">
-<meta property="article:modified_time" content="2018-10-25T12:03:26.000Z">
+<meta property="article:modified_time" content="2018-05-20T14:04:00.000Z">
 <meta property="article:author" content="Chien-Liang Chen">
 <meta property="article:tag" content="JS">
 <meta name="twitter:card" content="summary">
@@ -186,13 +186,6 @@
 
               <time title="創建時間：2018-05-20 22:04:00" itemprop="dateCreated datePublished" datetime="2018-05-20T22:04:00+08:00">2018-05-20</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2018-10-25 20:03:26" itemprop="dateModified" datetime="2018-10-25T20:03:26+08:00">2018-10-25</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -228,22 +221,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="JS中Array物件sort函數之理解"><a href="#JS中Array物件sort函數之理解" class="headerlink" title="JS中Array物件sort函數之理解"></a>JS中Array物件sort函數之理解</h1><p>從<a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/sort" target="_blank" rel="noopener">網頁開發者技術文件</a>說明中知道</p>
+        <h1 id="JS中Array物件sort函數之理解"><a href="#JS中Array物件sort函數之理解" class="headerlink" title="JS中Array物件sort函數之理解"></a>JS中Array物件sort函數之理解</h1><p>從<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">網頁開發者技術文件</a>說明中知道</p>
 <p>sort() 方法會原地（in place）對一個陣列的所有元素進行排序，並回傳此陣列。排序<strong>不一定是穩定的</strong>（stable）。預設的排序順序是<strong>根據字串的 Unicode 編碼位置（code points）而定</strong>。</p>
 <p>在文件中，說明sort方法可以直接使用callback function帶入數值來做比較，達到數值陣列排序。我們來看下面的程式碼</p>
 <pre><code>var numbers = [1, 100, 10, 2, 200, 20];
-numbers.sort(function(a, b) {
+numbers.sort(function(a, b) &#123;
   return a - b;
-});
+&#125;);
 console.log(numbers);
 </code></pre><p><strong>但是function(a, b)方法是利用什麼原理來達成數值陣列排序的呢?</strong></p>
-<p>原因出在Sort這個方法是由Javascript Engine所提供的sort。以瀏覽器Google Chrome (V8)為例，Sort方法是使用InsertionSort跟QuickSort實做出來的。當陣列長度小於等於10，就以InsertionSort來做排序。如果以上述的例子來追蹤一下，不難發現其排序過程就是InsertionSort。有興趣的人可以參考Github上的V8 JavaScript的陣列<a href="https://github.com/v8/v8/blob/master/src/js/array.js" target="_blank" rel="noopener">array.js</a>，另外想要理解什麼是InsertionSort的人，請參考其<a href="https://www.khanacademy.org/computing/computer-science/algorithms/insertion-sort/a/insertion-sort" target="_blank" rel="noopener">作法</a>。</p>
+<p>原因出在Sort這個方法是由Javascript Engine所提供的sort。以瀏覽器Google Chrome (V8)為例，Sort方法是使用InsertionSort跟QuickSort實做出來的。當陣列長度小於等於10，就以InsertionSort來做排序。如果以上述的例子來追蹤一下，不難發現其排序過程就是InsertionSort。有興趣的人可以參考Github上的V8 JavaScript的陣列<a target="_blank" rel="noopener" href="https://github.com/v8/v8/blob/master/src/js/array.js">array.js</a>，另外想要理解什麼是InsertionSort的人，請參考其<a target="_blank" rel="noopener" href="https://www.khanacademy.org/computing/computer-science/algorithms/insertion-sort/a/insertion-sort">作法</a>。</p>
 <pre><code>var numbers = [1, 100, 10, 2, 200, 20];
-numbers.sort(function(a, b) {
+numbers.sort(function(a, b) &#123;
   console.log(numbers);
   console.log(&#39;a=&#39; + a + &#39; b= &#39; + b)
   return a - b;
-});
+&#125;);
 console.log(numbers);
 </code></pre><p>程式碼結果</p>
 <p><img src="/images/pasted-0.png" alt="程式碼結果"></p>

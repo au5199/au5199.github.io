@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 5.3.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -180,13 +180,6 @@
 
               <time title="創建時間：2018-10-21 10:42:00" itemprop="dateCreated datePublished" datetime="2018-10-21T10:42:00+08:00">2018-10-21</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2018-10-25 20:03:26" itemprop="dateModified" datetime="2018-10-25T20:03:26+08:00">2018-10-25</time>
-              </span>
 
           
   
@@ -260,13 +253,6 @@
 
               <time title="創建時間：2018-10-19 13:00:00" itemprop="dateCreated datePublished" datetime="2018-10-19T13:00:00+08:00">2018-10-19</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2018-10-25 20:03:26" itemprop="dateModified" datetime="2018-10-25T20:03:26+08:00">2018-10-25</time>
-              </span>
 
           
   
@@ -303,7 +289,7 @@
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$languages &#x3D; [</span><br><span class="line">    &#39;languages&#39; &#x3D;&gt; [</span><br><span class="line">        &#39;Perl&#39;,</span><br><span class="line">        &#39;PHP&#39;,</span><br><span class="line">        &#39;Python&#39;,</span><br><span class="line">    ],</span><br><span class="line">];</span><br><span class="line">$a &#x3D; 10;</span><br><span class="line">$a &#x3D; $a + 1;</span><br><span class="line">$logger &#x3D; new \Monolog\Logger(&#39;my_log&#39;);</span><br><span class="line">$handler &#x3D; new \Monolog\Handler\ChromePHPHandler();</span><br><span class="line">$logger-&gt;pushHandler($handler);</span><br><span class="line">$logger-&gt;info($a);</span><br><span class="line">$logger-&gt;info(&#39;Log Array Test: &#39;, $languages);</span><br></pre></td></tr></table></figure>
 <ol>
-<li><p>其他Monolog詳細用法可以參考  <a href="https://stackify.com/php-monolog-tutorial/" target="_blank" rel="noopener">PHP Monolog Tutorial: A Step by Step Guide</a></p>
+<li><p>其他Monolog詳細用法可以參考  <a target="_blank" rel="noopener" href="https://stackify.com/php-monolog-tutorial/">PHP Monolog Tutorial: A Step by Step Guide</a></p>
 </li>
 <li><p>最後結果如下</p>
 </li>
@@ -354,13 +340,6 @@
 
               <time title="創建時間：2018-05-27 13:16:54" itemprop="dateCreated datePublished" datetime="2018-05-27T13:16:54+08:00">2018-05-27</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2018-10-25 20:03:26" itemprop="dateModified" datetime="2018-10-25T20:03:26+08:00">2018-10-25</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -413,40 +392,21 @@
 <li>document.getElementsByClassName(‘Class名稱’)[0].style</li>
 </ol>
 </li>
-<li>改變文字內容 :<ol>
+<li><p>改變文字內容 :</p>
+<ol>
 <li>document.getElementsByClassName(‘Class名稱’)[0].textContent &lt;— 塞內容進去</li>
 <li>document.getElementsByClassName(‘ID名稱’)[0].innerText &lt;— 塞內容進去 (IE 8之前IE專用屬性)</li>
 <li>document.getElementsByClassName(‘Class名稱’)[0].innerHTML &lt;— 塞HTML標籤與內容進去</li>
 <li>要注意getElements的使用方法，因為是elements，所以會回傳一個nodeList，不是回傳一個元素。就算是回傳只有一個元素。存取的方法也要寫成<code>document.getElementsByClassName(&#39;Class名稱&#39;)[0]</code></li>
-<li>轉換nodeList成為array(日後可以方便處理)；<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lis &#x3D; Array.from(document.getElementsByClassName(&#39;li&#39;));</span><br><span class="line">lis.forEach(function(li, index)&#123;</span><br><span class="line">    li.textContent &#x3D; &quot;內容&quot;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<li>轉換nodeList成為array(日後可以方便處理)；<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">      lis &#x3D; Array.from(document.getElementsByClassName(&#39;li&#39;));</span><br><span class="line">      lis.forEach(function(li, index)&#123;</span><br><span class="line">          li.textContent &#x3D; &quot;內容&quot;;</span><br><span class="line">      &#125;);&#96;&#96;&#96;</span><br><span class="line"></span><br><span class="line">## 3. document.getElementsByTagName取得Tag元素</span><br><span class="line"></span><br><span class="line">## 4. document.querySelector()或document.querySelectorAll()可以達到抓取任何ID，Class，Tag，樣式的內容</span><br><span class="line">* document.querySelector(&#39;li&#39;).style.color</span><br><span class="line">* document.querySelector(&#39;li&#39;).textContent</span><br><span class="line">* 如果使用querySelector(&#39;li&#39;)選取出多個li，則只能選許到第一個li元素。假設藥可以選取到其他元素，則只能靠CSS3樣式來輔助選取，例如: li:nth-child(3)</span><br><span class="line">* querySelector()不能選取到動態新增進去的元素，只能對靜態元素來進行選取</span><br><span class="line"></span><br><span class="line">## 5. NodeType</span><br><span class="line"></span><br><span class="line">Node有很多種型態，如元素節點，屬性節點，文字節點，註解節點等，通過NodeType區分，常見的如下：</span><br><span class="line">* 1 - Element</span><br><span class="line">* 2 - Attribute (deprecated)</span><br><span class="line">* 3 - Text node</span><br><span class="line">* 8 - Comment</span><br><span class="line">* 9 - Document itself</span><br><span class="line">* 10 - Doctype</span><br><span class="line">元素節點是節點(Node)中的一種型態，也繼承了節點這個物件</span><br><span class="line"></span><br><span class="line">* document.getElementById(&quot;ID名稱&quot;)取到的是Element也是Node型態。</span><br><span class="line"></span><br><span class="line">## 6. 取得child nodes，children element nodes，Children of children，First child，Last child，parent node，next sibling與previous sibling</span><br><span class="line">&gt;.children is a property of an Element. Only Elements have children, and these children are all of type Element.</span><br><span class="line">&gt;However .childNodes is a property of Node. .childNodes can contain any node.</span><br><span class="line">&gt;</span><br><span class="line">&gt;So a concrete example would be</span><br></pre></td></tr></table></figure>
+var el = document.createElement(“div”);<br>el.textContent = “foo”<br>el.childNodes.length === 1; // TextNode is a node child<br>el.children.length === 0; // no Element children<br>```<blockquote>
+<p>Of course .children is DOM4 so browser support is shaky, however if you use the DOM-shim, your cross browser problems will go away! Most of the time you want to use .children because generally you don’t want to loop over TextNodes or Comments in your DOM manipulation. If you do want to manipulate TextNodes you probably want textContent instead.</p>
+</blockquote>
 </li>
 </ol>
 </li>
-</ul>
-<h2 id="3-document-getElementsByTagName取得Tag元素"><a href="#3-document-getElementsByTagName取得Tag元素" class="headerlink" title="3. document.getElementsByTagName取得Tag元素"></a>3. document.getElementsByTagName取得Tag元素</h2><h2 id="4-document-querySelector-或document-querySelectorAll-可以達到抓取任何ID，Class，Tag，樣式的內容"><a href="#4-document-querySelector-或document-querySelectorAll-可以達到抓取任何ID，Class，Tag，樣式的內容" class="headerlink" title="4. document.querySelector()或document.querySelectorAll()可以達到抓取任何ID，Class，Tag，樣式的內容"></a>4. document.querySelector()或document.querySelectorAll()可以達到抓取任何ID，Class，Tag，樣式的內容</h2><ul>
-<li>document.querySelector(‘li’).style.color</li>
-<li>document.querySelector(‘li’).textContent</li>
-<li>如果使用querySelector(‘li’)選取出多個li，則只能選許到第一個li元素。假設藥可以選取到其他元素，則只能靠CSS3樣式來輔助選取，例如: li:nth-child(3)</li>
-<li>querySelector()不能選取到動態新增進去的元素，只能對靜態元素來進行選取</li>
-</ul>
-<h2 id="5-NodeType"><a href="#5-NodeType" class="headerlink" title="5. NodeType"></a>5. NodeType</h2><p>Node有很多種型態，如元素節點，屬性節點，文字節點，註解節點等，通過NodeType區分，常見的如下：</p>
-<ul>
-<li>1 - Element</li>
-<li>2 - Attribute (deprecated)</li>
-<li>3 - Text node</li>
-<li>8 - Comment</li>
-<li>9 - Document itself</li>
-<li><p>10 - Doctype<br>元素節點是節點(Node)中的一種型態，也繼承了節點這個物件</p>
+<li><p>children是Element的屬性，childNodes是Node的屬性</p>
 </li>
-<li><p>document.getElementById(“ID名稱”)取到的是Element也是Node型態。</p>
-</li>
-</ul>
-<h2 id="6-取得child-nodes，children-element-nodes，Children-of-children，First-child，Last-child，parent-node，next-sibling與previous-sibling"><a href="#6-取得child-nodes，children-element-nodes，Children-of-children，First-child，Last-child，parent-node，next-sibling與previous-sibling" class="headerlink" title="6. 取得child nodes，children element nodes，Children of children，First child，Last child，parent node，next sibling與previous sibling"></a>6. 取得child nodes，children element nodes，Children of children，First child，Last child，parent node，next sibling與previous sibling</h2><blockquote>
-<p>.children is a property of an Element. Only Elements have children, and these children are all of type Element.<br>However .childNodes is a property of Node. .childNodes can contain any node.</p>
-<p>So a concrete example would be<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var el &#x3D; document.createElement(&quot;div&quot;);</span><br><span class="line">el.textContent &#x3D; &quot;foo&quot;</span><br><span class="line">el.childNodes.length &#x3D;&#x3D;&#x3D; 1; &#x2F;&#x2F; TextNode is a node child</span><br><span class="line">el.children.length &#x3D;&#x3D;&#x3D; 0; &#x2F;&#x2F; no Element children</span><br></pre></td></tr></table></figure><br>Of course .children is DOM4 so browser support is shaky, however if you use the DOM-shim, your cross browser problems will go away! Most of the time you want to use .children because generally you don’t want to loop over TextNodes or Comments in your DOM manipulation. If you do want to manipulate TextNodes you probably want textContent instead.</p>
-</blockquote>
-<ul>
-<li>children是Element的屬性，childNodes是Node的屬性</li>
 </ul>
 
       
@@ -493,13 +453,6 @@
 
               <time title="創建時間：2018-05-20 22:04:00" itemprop="dateCreated datePublished" datetime="2018-05-20T22:04:00+08:00">2018-05-20</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新於</span>
-                <time title="修改時間：2018-10-25 20:03:26" itemprop="dateModified" datetime="2018-10-25T20:03:26+08:00">2018-10-25</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -535,22 +488,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="JS中Array物件sort函數之理解"><a href="#JS中Array物件sort函數之理解" class="headerlink" title="JS中Array物件sort函數之理解"></a>JS中Array物件sort函數之理解</h1><p>從<a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/sort" target="_blank" rel="noopener">網頁開發者技術文件</a>說明中知道</p>
+          <h1 id="JS中Array物件sort函數之理解"><a href="#JS中Array物件sort函數之理解" class="headerlink" title="JS中Array物件sort函數之理解"></a>JS中Array物件sort函數之理解</h1><p>從<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/sort">網頁開發者技術文件</a>說明中知道</p>
 <p>sort() 方法會原地（in place）對一個陣列的所有元素進行排序，並回傳此陣列。排序<strong>不一定是穩定的</strong>（stable）。預設的排序順序是<strong>根據字串的 Unicode 編碼位置（code points）而定</strong>。</p>
 <p>在文件中，說明sort方法可以直接使用callback function帶入數值來做比較，達到數值陣列排序。我們來看下面的程式碼</p>
 <pre><code>var numbers = [1, 100, 10, 2, 200, 20];
-numbers.sort(function(a, b) {
+numbers.sort(function(a, b) &#123;
   return a - b;
-});
+&#125;);
 console.log(numbers);
 </code></pre><p><strong>但是function(a, b)方法是利用什麼原理來達成數值陣列排序的呢?</strong></p>
-<p>原因出在Sort這個方法是由Javascript Engine所提供的sort。以瀏覽器Google Chrome (V8)為例，Sort方法是使用InsertionSort跟QuickSort實做出來的。當陣列長度小於等於10，就以InsertionSort來做排序。如果以上述的例子來追蹤一下，不難發現其排序過程就是InsertionSort。有興趣的人可以參考Github上的V8 JavaScript的陣列<a href="https://github.com/v8/v8/blob/master/src/js/array.js" target="_blank" rel="noopener">array.js</a>，另外想要理解什麼是InsertionSort的人，請參考其<a href="https://www.khanacademy.org/computing/computer-science/algorithms/insertion-sort/a/insertion-sort" target="_blank" rel="noopener">作法</a>。</p>
+<p>原因出在Sort這個方法是由Javascript Engine所提供的sort。以瀏覽器Google Chrome (V8)為例，Sort方法是使用InsertionSort跟QuickSort實做出來的。當陣列長度小於等於10，就以InsertionSort來做排序。如果以上述的例子來追蹤一下，不難發現其排序過程就是InsertionSort。有興趣的人可以參考Github上的V8 JavaScript的陣列<a target="_blank" rel="noopener" href="https://github.com/v8/v8/blob/master/src/js/array.js">array.js</a>，另外想要理解什麼是InsertionSort的人，請參考其<a target="_blank" rel="noopener" href="https://www.khanacademy.org/computing/computer-science/algorithms/insertion-sort/a/insertion-sort">作法</a>。</p>
 <pre><code>var numbers = [1, 100, 10, 2, 200, 20];
-numbers.sort(function(a, b) {
+numbers.sort(function(a, b) &#123;
   console.log(numbers);
   console.log(&#39;a=&#39; + a + &#39; b= &#39; + b)
   return a - b;
-});
+&#125;);
 console.log(numbers);
 </code></pre><p>程式碼結果</p>
 <p><img src="/images/pasted-0.png" alt="程式碼結果"></p>
